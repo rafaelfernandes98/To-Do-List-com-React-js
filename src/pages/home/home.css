@@ -1,0 +1,42 @@
+.container-home {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.container-titulo {
+    color: #439881;
+    border-bottom: 1px solid #439881;
+    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-add {
+    margin-top: 4%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2%;
+}
+
+.botao-add {
+    text-decoration: none;
+    background-color: #439881;
+    border: 0;
+    padding: 1em 2.5em;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.botao-add:hover{
+    position: relative;
+    bottom: 4px;
+} 
