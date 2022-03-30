@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import {AiOutlineSave} from 'react-icons/ai'
+import { AiOutlineSave } from "react-icons/ai";
 
 import "./addTarefa.css";
+import { saveTarefa } from "../../services/storeTarefas";
 
 export default function AddTarefa() {
 
-  const [novaTarefa, setNovaTarefa] = useState('');
-
+  const [novaTarefa, setNovaTarefa] = useState([]);
   
+
+  async function handleSaveTarefa() {
+    saveTarefa('@storedTarefas', novaTarefa);
+    setNovaTarefa('')
+  }
 
   return (
     <>
@@ -25,20 +30,16 @@ export default function AddTarefa() {
           </div>
         </div>
         <div className="box-form">
-            <input
+          <input
             type="text"
             value={novaTarefa}
-            onChange={(e)=>setNovaTarefa(e.target.value)}  
-              
-              />
-            <button>
-                <AiOutlineSave color="#439881" size={30} />
-            </button>
+            onChange={(e) => setNovaTarefa(e.target.value)}
+          />
+          <button onClick={handleSaveTarefa}>
+            <AiOutlineSave color="#439881" size={30} />
+          </button>
         </div>
-
       </div>
     </>
   );
-  
-
 }
