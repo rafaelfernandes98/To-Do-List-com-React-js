@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./tarefas.css";
 import { CgTrash } from "react-icons/cg";
 import { deleteTarefa, getSaveTarefa } from "./../../services/storeTarefas";
-import { AddTarefa } from "./../../pages/addTarefa/AddTarefa";
+
 
 const Tarefas = () => {
   const [emptyTarefas, setEmptyTarefas] = useState(false);
 
   const [tarefas, setTarefas] = useState([]);
+
+
 
   useEffect(() => {
     async function getTarefas() {
@@ -33,8 +35,8 @@ const Tarefas = () => {
     setTarefas(result)
     
   }
-
   
+
 
   return (
     <>
@@ -48,7 +50,9 @@ const Tarefas = () => {
 
         {tarefas.map((tarefa, indice)=>(
           <div key={indice} className="box-tarefa">
-            <h3>{tarefa}</h3>
+
+           <h3 className="" id="title">{tarefa.descricao}</h3> 
+            
             <button onClick={()=>handleDelete(indice)}>
               <CgTrash />
             </button>

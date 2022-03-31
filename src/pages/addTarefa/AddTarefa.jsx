@@ -9,11 +9,21 @@ import { saveTarefa } from "../../services/storeTarefas";
 export default function AddTarefa() {
 
   const [novaTarefa, setNovaTarefa] = useState([]);
+
+  const [nomeTarefa, setNomeTarefa] = useState('')
+
+  const [tarefaFeita, setTarefaFeita] = useState(false)
+
+ 
   
+  const auxTarefa = {
+    descricao : nomeTarefa,
+    feito : tarefaFeita
+  }
 
   async function handleSaveTarefa() {
-    saveTarefa('@storedTarefas', novaTarefa);
-    setNovaTarefa('')
+    saveTarefa('@storedTarefas', ...novaTarefa ,{...auxTarefa});
+    setNomeTarefa('')
   }
 
   return (
@@ -32,8 +42,9 @@ export default function AddTarefa() {
         <div className="box-form">
           <input
             type="text"
-            value={novaTarefa}
-            onChange={(e) => setNovaTarefa(e.target.value)}
+            // id="descricao"
+            value={nomeTarefa}
+            onChange={(e) => setNomeTarefa(e.target.value)}
           />
           <button onClick={handleSaveTarefa}>
             <AiOutlineSave color="#439881" size={30} />
