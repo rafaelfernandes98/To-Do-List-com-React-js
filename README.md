@@ -6,3 +6,4 @@
 
 - function components;
 
+- dados da tarefa salvos no LocalStorage.
