@@ -22,8 +22,11 @@ export default function AddTarefa() {
   }
 
   async function handleSaveTarefa() {
-    saveTarefa('@storedTarefas', ...novaTarefa ,{...auxTarefa});
-    setNomeTarefa('')
+    if(nomeTarefa !== ""){
+      saveTarefa('@storedTarefas', ...novaTarefa ,{...auxTarefa});
+      setNomeTarefa('')
+
+    }
   }
 
   return (
