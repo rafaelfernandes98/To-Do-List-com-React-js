@@ -51,7 +51,7 @@ const Tarefas = () => {
         {tarefas.map((tarefa, indice)=>(
           <div key={indice} className="box-tarefa">
 
-           <h3 className="" id="title">{tarefa.descricao}</h3> 
+           <h3>{tarefa.descricao}</h3> 
             
             <button onClick={()=>handleDelete(indice)}>
               <CgTrash />

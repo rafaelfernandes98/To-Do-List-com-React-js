@@ -12,13 +12,13 @@ export default function AddTarefa() {
 
   const [nomeTarefa, setNomeTarefa] = useState('')
 
-  const [tarefaFeita, setTarefaFeita] = useState(false)
+  
 
  
   
   const auxTarefa = {
-    descricao : nomeTarefa,
-    feito : tarefaFeita
+    descricao : nomeTarefa
+  
   }
 
   async function handleSaveTarefa() {
